@@ -127,5 +127,9 @@ impl PosixHeader {
         let s = lossy_string(&self.size);
         usize::from_str_radix(s.trim(), 8).unwrap_or(0)
     }
+
+    pub fn name(&self) -> String {
+        lossy_string(&self.name)
+    }
     
 }
